@@ -1,0 +1,10 @@
+jdk:
+  - openjdk11
+install:
+  - cp curl/src/main/native/config/versions/nghttp2ver.h curl/src/main/native/nghttp2/lib/includes/nghttp2/nghttp2ver.h
+  - cp curl/src/main/native/config/versions/nghttp3ver.h curl/src/main/native/nghttp3/lib/includes/nghttp3/version.h
+  - cp curl/src/main/native/config/versions/ngtcp2ver.h curl/src/main/native/ngtcp2/lib/includes/ngtcp2/version.h
+  - echo "#include \"tool_hugehelp.h\"" > curl/src/main/native/curl/src/tool_hugehelp.c
+  - echo "Running a custom install command"
+  - chmod +x gradlew
+  - ./gradlew publishToMavenLocal
