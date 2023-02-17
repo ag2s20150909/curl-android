@@ -7,4 +7,5 @@ install:
   - echo "#include \"tool_hugehelp.h\"" > curl/src/main/native/curl/src/tool_hugehelp.c
   - echo "Running a custom install command"
   - chmod +x gradlew
+  - ./gradlew :e:assembleRelease
   - ./gradlew publishToMavenLocal
