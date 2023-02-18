@@ -46,11 +46,13 @@ jobs:
       - name: Upload Test
         run: |
           cd ~/.m2
+          ls
+          pwd
           git init
           git checkout -b test
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git remote add origin "https://${{ github.actor }}:${{ secrets.ACTIONS_TOKEN }}@github.com/${{ github.actor }}/curl-android"
-          git add *
-          git commit -m "${{ needs.prepare.outputs.versionL }}"
-          git push -f -u origin test     
+          git add -A
+          git commit -m "update"
+          git push -f -u origin test  
