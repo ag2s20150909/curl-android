@@ -9,7 +9,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, windows-latest, macOS-latest ]
+        os: [ ubuntu-latest]
+        #os: [ ubuntu-latest, windows-latest, macOS-latest ]
 
     steps:
       - name: Check out
@@ -55,4 +56,4 @@ jobs:
           git remote add origin "https://${{ github.actor }}:${{ secrets.ACTIONS_TOKEN }}@github.com/${{ github.actor }}/curl-android"
           git add -A
           git commit -m "update"
-          git push -f -u origin test  
+          git push -f -u origin test 
