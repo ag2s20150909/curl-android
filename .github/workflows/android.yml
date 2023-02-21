@@ -32,7 +32,7 @@ jobs:
       - name: Build with Gradle
         run: |
           ./gradlew :e:assembleRelease
-          ./gradlew publishToMavenLocal
+          ./gradlew publish
       - name: Upload app
         uses: actions/upload-artifact@v3
         with:
