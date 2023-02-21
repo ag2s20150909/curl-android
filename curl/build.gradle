@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.library'
     id 'maven-publish'
-    id 'signing'
 }
 
 android {
@@ -98,23 +97,6 @@ publishing {
     }
     repositories {
         mavenLocal()
-        maven {
-            name 'ossrh'
-            url 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
-            credentials(PasswordCredentials)
-        }
     }
 }
 
-signing {
-    def signingKey = findProperty("signingKey")
-    def signingPassword = findProperty("signingPassword")
-    def secretKeyRingFile = findProperty("signing.secretKeyRingFile")
-
-    if (secretKeyRingFile != null && file(secretKeyRingFile).exists()) {
-        sign publishing.publications
-    } else if (signingKey != null) {
-        useInMemoryPgpKeys(signingKey, signingPassword)
-        sign publishing.publications
-    }
-}
