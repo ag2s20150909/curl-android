@@ -45,6 +45,7 @@ jobs:
           path: ~/.m2
       
       - name: Upload Test
+        if: ${{ github.actor == 'ag2s20150909' }}
         run: |
           cd ~/.m2
           ls
