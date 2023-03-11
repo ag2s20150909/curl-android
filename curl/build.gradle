@@ -60,7 +60,7 @@ android {
 }
 
 dependencies {
-    api 'io.github.vvb2060.ndk:boringssl:3.0'
+    api 'io.github.vvb2060.ndk:boringssl:3.1'
 }
 
 publishing {
